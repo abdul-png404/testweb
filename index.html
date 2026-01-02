@@ -1,0 +1,1832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusConsult | Business Technology Solutions</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Enterprise-grade business consulting and technology solutions for SMBs, startups, and enterprises. Drive growth with automation, CRM, Cloud PBX, and AI solutions.">
+    <meta name="keywords" content="business consulting, CRM solutions, cloud PBX, call center dialer, IVR, meta ads, digital transformation">
+    <meta name="author" content="NexusConsult">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            /* Color Palette */
+            --primary-blue: #0a2463;
+            --secondary-blue: #1e40af;
+            --accent-blue: #3b82f6;
+            --accent-teal: #06b6d4;
+            --accent-purple: #8b5cf6;
+            --charcoal: #1f2937;
+            --dark-charcoal: #111827;
+            --light-gray: #f8fafc;
+            --medium-gray: #e2e8f0;
+            --white: #ffffff;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-teal) 100%);
+            --gradient-premium: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 50%, var(--accent-teal) 100%);
+            
+            /* Shadows */
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            
+            /* Transitions */
+            --transition-fast: all 0.2s ease;
+            --transition-normal: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        /* ===== COMMON STYLES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title p {
+            font-size: 1.125rem;
+            color: var(--charcoal);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition-normal);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-large);
+            background: var(--gradient-accent);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: var(--white);
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition-normal);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--charcoal);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-accent);
+            transition: var(--transition-normal);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 220px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-xl);
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition-normal);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .dropdown-content a:hover {
+            background: var(--light-gray);
+            padding-left: 25px;
+            color: var(--primary-blue);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--charcoal);
+            cursor: pointer;
+        }
+
+        /* ===== PAGE SYSTEM ===== */
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ===== HOME PAGE ===== */
+        #home-page {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .hero {
+            padding: 120px 0 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.125rem;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+            padding: 40px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-premium);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px 30px;
+            box-shadow: var(--shadow-medium);
+            transition: var(--transition-normal);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-accent);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+        }
+
+        /* Why Choose Us */
+        .why-choose-us {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 30px;
+            padding: 80px;
+            margin: 80px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            transition: var(--transition-normal);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Process */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 25px;
+        }
+
+        /* ===== SERVICES PAGE ===== */
+        .services-hero {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* ===== SERVICE DETAIL PAGES ===== */
+        .service-detail-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .service-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .service-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-item {
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        /* ===== ABOUT PAGE ===== */
+        .about-hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .contact-info {
+            padding: 30px;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark-charcoal);
+            color: var(--white);
+            padding: 80px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            
+            .why-choose-us {
+                padding: 40px 20px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo" onclick="showPage('home')">
+                <div class="logo-icon">N</div>
+                <div class="logo-text">NexusConsult</div>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="active" onclick="showPage('home')">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services</a>
+                        <div class="dropdown-content">
+                            <a href="#crm" onclick="showPage('crm')">CRM Solutions</a>
+                            <a href="#telephony" onclick="showPage('telephony')">Cloud PBX</a>
+                            <a href="#dialer" onclick="showPage('dialer')">Call Center Dialer</a>
+                            <a href="#ivr" onclick="showPage('ivr')">IVR Solutions</a>
+                            <a href="#meta-ads" onclick="showPage('meta-ads')">Meta Ads</a>
+                        </div>
+                    </li>
+                    <li><a href="#about" onclick="showPage('about')">About Us</a></li>
+                    <li><a href="#contact" onclick="showPage('contact')">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn" onclick="showPage('contact')">
+                    <i class="fas fa-calendar-check"></i>
+                    Free Consultation
+                </a>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Drive <span>Business Growth</span> with Intelligent Automation & Proven ROI</h1>
+                        <p>We combine strategic business consulting with cutting-edge technology solutions to help SMBs, enterprises, and startups scale efficiently, reduce costs, and maximize revenue.</p>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <a href="#contact" class="btn" onclick="showPage('contact')">
+                                <i class="fas fa-calendar-check"></i>
+                                Book Free Consultation
+                            </a>
+                            <a href="#services" class="btn btn-secondary" onclick="showPage('services')">
+                                <i class="fas fa-play-circle"></i>
+                                View Solutions
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="hero-image">
+                            <div style="text-align: center;">
+                                <i class="fas fa-rocket" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                                <div>Business Growth Visualization</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div>Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div>Clients Served</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div>Client Retention</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">40%</div>
+                        <div>Avg. ROI Improvement</div>
+                    </div>
+                </div>
+                
+                <!-- Services Overview -->
+                <div class="section-title">
+                    <h2>Our Comprehensive Solutions</h2>
+                    <p>End-to-end business technology solutions designed to drive growth, efficiency, and competitive advantage.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>CRM Solutions</h3>
+                        <p>Centralize customer data, automate sales processes, and improve customer relationships with tailored CRM implementations.</p>
+                        <a href="#crm" class="btn" style="padding: 10px 20px; margin-top: 20px;" onclick="showPage('crm')">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Cloud PBX & Telephony</h3>
+                        <p>Modernize business communication with scalable, feature-rich cloud telephony that reduces costs by up to 40%.</p>
+                        <a href="#telephony" class="btn" style="padding: 10px 20px; margin-top: 20px;" onclick="showPage('telephony')">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Call Center Dialer</h3>
+                        <p>Boost contact center productivity by 300% with intelligent dialer solutions featuring predictive and power dialing.</p>
+                        <a href="#dialer" class="btn" style="padding: 10px 20px; margin-top: 20px;" onclick="showPage('dialer')">
+                            Learn More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Why Choose Us -->
+                <div class="why-choose-us">
+                    <div class="section-title">
+                        <h2>Why Choose NexusConsult</h2>
+                        <p>We're strategic partners who understand both business operations and technical implementation.</p>
+                    </div>
+                    
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="service-icon" style="width: 60px; height: 60px; margin: 0 auto 20px;">
+                                <i class="fas fa-chess-knight"></i>
+                            </div>
+                            <h3>Consulting-First Approach</h3>
+                            <p>We begin with deep business analysis to ensure solutions align with your strategic goals.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="service-icon" style="width: 60px; height: 60px; margin: 0 auto 20px;">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Proven ROI Focus</h3>
+                            <p>Every solution is measured against clear ROI metrics to ensure tangible business value.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="service-icon" style="width: 60px; height: 60px; margin: 0 auto 20px;">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                            <h3>Enterprise Scalability</h3>
+                            <p>Solutions designed to grow with your business, from startup to enterprise scale.</p>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="service-icon" style="width: 60px; height: 60px; margin: 0 auto 20px;">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Ongoing Optimization</h3>
+                            <p>We don't just implement and leave. We continuously optimize for peak performance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Process -->
+                <div class="section-title">
+                    <h2>Our Simple, Effective Process</h2>
+                    <p>Streamlined methodology to ensure successful implementation and maximum value.</p>
+                </div>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discover</h3>
+                        <p>We analyze your business processes, challenges, and goals to design the optimal solution.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Implement</h3>
+                        <p>Seamless deployment with minimal disruption, comprehensive training, and change management.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Optimize</h3>
+                        <p>Continuous monitoring, performance analysis, and iterative improvements for lasting success.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Page -->
+    <section id="services-page" class="page">
+        <div class="services-hero">
+            <div class="container">
+                <h1>Our Services</h1>
+                <p>Comprehensive business technology solutions for SMBs, enterprises, and startups</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2>End-to-End Digital Transformation</h2>
+                    <p>We provide comprehensive technology solutions that address every aspect of your business operations.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>CRM Solutions</h3>
+                        <p>Streamline sales, marketing, and customer service with customized CRM implementations.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>360° Customer View</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Sales Pipeline Automation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Predictive Analytics</span>
+                            </div>
+                        </div>
+                        <a href="#crm" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('crm')">
+                            Explore CRM Solutions
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-phone-volume"></i>
+                        </div>
+                        <h3>Cloud PBX & Telephony</h3>
+                        <p>Modern, scalable business phone systems with advanced features and mobile integration.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>HD Voice & Video</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Advanced Call Routing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Mobile Integration</span>
+                            </div>
+                        </div>
+                        <a href="#telephony" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('telephony')">
+                            Explore Telephony
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>Call Center Dialer</h3>
+                        <p>Boost contact center productivity with intelligent dialer solutions and predictive dialing.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Predictive Dialing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Real-time Monitoring</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>CRM Integration</span>
+                            </div>
+                        </div>
+                        <a href="#dialer" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('dialer')">
+                            Explore Dialer Solutions
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>IVR Solutions</h3>
+                        <p>Automate customer interactions with intelligent voice response systems powered by AI.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Natural Language Processing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Multi-level Menus</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Payment Processing</span>
+                            </div>
+                        </div>
+                        <a href="#ivr" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('ivr')">
+                            Explore IVR Solutions
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h3>Meta Ads & Marketing</h3>
+                        <p>Data-driven advertising campaigns that deliver measurable ROI across digital channels.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Audience Targeting</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>A/B Testing</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>ROI Tracking</span>
+                            </div>
+                        </div>
+                        <a href="#meta-ads" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('meta-ads')">
+                            Explore Marketing
+                        </a>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Business Automation</h3>
+                        <p>Streamline operations and eliminate manual tasks with intelligent automation solutions.</p>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Workflow Automation</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Data Integration</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <i class="fas fa-check" style="color: #10b981;"></i>
+                                <span>Process Optimization</span>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn" style="padding: 12px 24px; width: 100%;" onclick="showPage('contact')">
+                            Request Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CRM Solutions Page -->
+    <section id="crm-page" class="page">
+        <div class="service-detail-hero" style="background: var(--gradient-accent); color: white;">
+            <div class="container">
+                <h1>CRM Solutions</h1>
+                <p>Transform customer relationships and drive revenue growth with intelligent CRM automation</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="service-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Maximize Customer Lifetime Value</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 30px;">
+                        Our CRM solutions help businesses centralize customer data, automate sales processes, and deliver exceptional customer experiences that drive loyalty and repeat business.
+                    </p>
+                    <p style="margin-bottom: 40px;">
+                        With 25% increase in sales productivity and 30% faster lead conversion, our CRM implementations deliver measurable ROI from day one.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>360° Customer View</h3>
+                            <p>Complete customer profile with all interactions and touchpoints in one place.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Sales Automation</h3>
+                            <p>Automated lead scoring, pipeline management, and follow-up reminders.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-bar" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Predictive Analytics</h3>
+                            <p>AI-powered insights to identify high-value opportunities and churn risks.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Mobile Access</h3>
+                            <p>Full CRM functionality on mobile devices for on-the-go teams.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 1.1rem;" onclick="showPage('contact')">
+                            <i class="fas fa-calendar-check"></i>
+                            Request CRM Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud PBX Page -->
+    <section id="telephony-page" class="page">
+        <div class="service-detail-hero" style="background: var(--gradient-primary); color: white;">
+            <div class="container">
+                <h1>Cloud PBX & Telephony</h1>
+                <p>Modern business communication solutions for the digital age</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="service-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Enterprise-Grade Communication</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 30px;">
+                        Our cloud PBX solutions provide reliable, feature-rich business phone systems without the need for expensive hardware or complex maintenance.
+                    </p>
+                    <p style="margin-bottom: 40px;">
+                        Reduce telephony costs by up to 40% while improving customer response times by 50% with our scalable solutions.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-phone" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>HD Voice & Video</h3>
+                            <p>Crystal clear audio and video calls for professional communication.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-route" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Advanced Routing</h3>
+                            <p>Intelligent call routing based on time, location, and availability.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-mobile-alt" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Mobile Integration</h3>
+                            <p>Seamless integration with mobile devices for on-the-go teams.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Enterprise Security</h3>
+                            <p>Military-grade encryption and security protocols for all communications.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 1.1rem;" onclick="showPage('contact')">
+                            <i class="fas fa-phone"></i>
+                            Get Telephony Setup
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call Center Dialer Page -->
+    <section id="dialer-page" class="page">
+        <div class="service-detail-hero" style="background: linear-gradient(135deg, #059669 0%, var(--accent-teal) 100%); color: white;">
+            <div class="container">
+                <h1>Call Center Dialer Solutions</h1>
+                <p>Boost contact center productivity by 300%</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="service-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Maximize Agent Productivity</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 30px;">
+                        Our call center dialer solutions automate the dialing process, connect agents to more live contacts, and eliminate manual dialing inefficiencies.
+                    </p>
+                    <p style="margin-bottom: 40px;">
+                        Achieve 300% increase in calls per agent per day and 25% higher conversion rates with our intelligent dialer technology.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-brain" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Predictive Dialing</h3>
+                            <p>Automatically dials multiple numbers, connecting agents only when someone answers.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-bolt" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Power Dialing</h3>
+                            <p>Rapid sequential dialing for high-volume outbound campaigns.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-eye" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Real-time Monitoring</h3>
+                            <p>Live dashboard with agent performance metrics and call statistics.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-sync" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>CRM Integration</h3>
+                            <p>Seamless integration with popular CRM platforms for unified workflows.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 1.1rem;" onclick="showPage('contact')">
+                            <i class="fas fa-headset"></i>
+                            Schedule Dialer Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- IVR Solutions Page -->
+    <section id="ivr-page" class="page">
+        <div class="service-detail-hero" style="background: linear-gradient(135deg, var(--accent-purple) 0%, #ec4899 100%); color: white;">
+            <div class="container">
+                <h1>IVR Solutions</h1>
+                <p>Intelligent customer self-service systems powered by AI</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="service-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Automated Customer Interactions</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 30px;">
+                        Our IVR solutions route callers efficiently, provide instant information, and handle routine inquiries without agent intervention.
+                    </p>
+                    <p style="margin-bottom: 40px;">
+                        Reduce average call handling time by 60% and provide 24/7 customer service availability with our intelligent IVR systems.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-comment-alt" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Natural Language</h3>
+                            <p>Understands conversational speech instead of requiring specific commands.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-cogs" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Smart Routing</h3>
+                            <p>Routes calls based on intent, language, and customer value.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-credit-card" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Payment Processing</h3>
+                            <p>Secure payment collection through IVR with PCI compliance.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Analytics Dashboard</h3>
+                            <p>Comprehensive reporting on call volume, resolution rates, and customer satisfaction.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 1.1rem;" onclick="showPage('contact')">
+                            <i class="fas fa-robot"></i>
+                            Design My IVR System
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meta Ads Page -->
+    <section id="meta-ads-page" class="page">
+        <div class="service-detail-hero" style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: white;">
+            <div class="container">
+                <h1>Meta Ads & Performance Marketing</h1>
+                <p>Data-driven advertising for measurable ROI</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="service-content">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Precision-Targeted Advertising</h2>
+                    <p style="font-size: 1.125rem; margin-bottom: 30px;">
+                        We create and optimize performance marketing campaigns that reach your ideal customers, drive conversions, and deliver measurable return on ad spend.
+                    </p>
+                    <p style="margin-bottom: 40px;">
+                        Achieve 3-5x return on ad spend (ROAS) and 40% lower customer acquisition costs with our data-driven approach.
+                    </p>
+                    
+                    <div class="service-features">
+                        <div class="feature-item">
+                            <i class="fas fa-bullseye" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Audience Research</h3>
+                            <p>Deep persona development and competitive analysis for precise targeting.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-ad" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Creative Strategy</h3>
+                            <p>Compelling ad creatives that resonate with your target audience.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>ROI Tracking</h3>
+                            <p>Real-time performance analytics with clear attribution modeling.</p>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <i class="fas fa-sync" style="font-size: 2rem; color: var(--accent-blue); margin-bottom: 15px;"></i>
+                            <h3>Continuous Optimization</h3>
+                            <p>Ongoing A/B testing and campaign refinement for maximum performance.</p>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 50px;">
+                        <a href="#contact" class="btn" style="padding: 15px 40px; font-size: 1.1rem;" onclick="showPage('contact')">
+                            <i class="fas fa-bullhorn"></i>
+                            Start Meta Ads Campaign
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about-page" class="page">
+        <div class="about-hero">
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <h1 style="font-size: 3rem; margin-bottom: 20px;">About NexusConsult</h1>
+                        <p style="font-size: 1.125rem; margin-bottom: 20px;">
+                            We bridge the gap between business strategy and technology implementation, delivering solutions that drive real growth and competitive advantage.
+                        </p>
+                        <p style="margin-bottom: 20px;">
+                            Unlike typical technology agencies, we begin with deep business analysis to understand your unique challenges, goals, and operational context.
+                        </p>
+                        <p>
+                            Our consultants have both business strategy expertise and technical implementation experience, allowing us to design solutions that not only work technically but also drive meaningful business outcomes.
+                        </p>
+                    </div>
+                    <div>
+                        <div style="background: var(--gradient-primary); height: 400px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                            Team Collaboration
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px;">
+                    <div class="section-title">
+                        <h2>Our Core Values</h2>
+                        <p>These principles guide everything we do and define how we work with our clients.</p>
+                    </div>
+                    
+                    <div class="values-grid">
+                        <div class="service-card">
+                            <div class="service-icon" style="background: var(--gradient-primary);">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Strategic Alignment</h3>
+                            <p>We ensure every technology solution directly supports your business objectives and growth strategy.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon" style="background: var(--gradient-accent);">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Partnership Approach</h3>
+                            <p>We work as an extension of your team, invested in your long-term success beyond project completion.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon" style="background: var(--gradient-premium);">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>ROI Focus</h3>
+                            <p>Every solution is measured against clear business outcomes and tangible return on investment.</p>
+                        </div>
+                        
+                        <div class="service-card">
+                            <div class="service-icon" style="background: linear-gradient(135deg, var(--accent-purple) 0%, #ec4899 100%);">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Innovation</h3>
+                            <p>We continuously explore emerging technologies and methodologies to deliver cutting-edge solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Page -->
+    <section id="contact-page" class="page">
+        <div class="contact-hero">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Let's discuss your business transformation</p>
+            </div>
+        </div>
+        
+        <div class="section-padding">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <h2 style="font-size: 2rem; margin-bottom: 30px;">Request a Free Consultation</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service">Service Interest *</label>
+                                <select id="service" class="form-control" required>
+                                    <option value="">Select a service</option>
+                                    <option value="crm">CRM Solutions</option>
+                                    <option value="telephony">Cloud PBX & Telephony</option>
+                                    <option value="dialer">Call Center Dialer</option>
+                                    <option value="ivr">IVR Solutions</option>
+                                    <option value="meta-ads">Meta Ads & Marketing</option>
+                                    <option value="consulting">Business Consulting</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="5" placeholder="Tell us about your business goals and challenges..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn" style="width: 100%; padding: 16px;">
+                                <i class="fas fa-paper-plane"></i>
+                                Submit Request
+                            </button>
+                            
+                            <p style="margin-top: 20px; font-size: 0.9rem; color: var(--charcoal);">
+                                <i class="fas fa-clock" style="margin-right: 8px;"></i>
+                                We respond within 24 hours
+                            </p>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <h2 style="font-size: 2rem; margin-bottom: 30px;">Get in Touch</h2>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3>Office Location</h3>
+                                <p>123 Business Avenue, Suite 500</p>
+                                <p>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3>Contact Details</h3>
+                                <p style="margin-bottom: 5px;">
+                                    <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                                    +1 (555) 123-4567
+                                </p>
+                                <p>
+                                    <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                                    contact@nexusconsult.com
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3>Business Hours</h3>
+                                <p style="margin-bottom: 5px;">Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                                <p>Saturday: 10:00 AM - 2:00 PM PST</p>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-top: 40px;">
+                            <a href="https://wa.me/15551234567" target="_blank" class="btn" style="background: #25D366; margin-right: 20px;">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp Chat
+                            </a>
+                            <a href="tel:+15551234567" class="btn" style="background: var(--accent-teal);">
+                                <i class="fas fa-phone"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#home" class="logo" onclick="showPage('home')" style="margin-bottom: 30px; display: inline-block;">
+                        <div class="logo-icon">N</div>
+                        <div class="logo-text">NexusConsult</div>
+                    </a>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 30px;">
+                        Enterprise-grade business technology solutions and strategic consulting for SMBs, startups, and enterprises.
+                    </p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="#" style="color: white; font-size: 1.2rem;">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.2rem;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.2rem;">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 20px; color: var(--white);">Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="#home" onclick="showPage('home')">Home</a>
+                        <a href="#services" onclick="showPage('services')">Services</a>
+                        <a href="#about" onclick="showPage('about')">About Us</a>
+                        <a href="#contact" onclick="showPage('contact')">Contact</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 20px; color: var(--white);">Services</h3>
+                    <div class="footer-links">
+                        <a href="#crm" onclick="showPage('crm')">CRM Solutions</a>
+                        <a href="#telephony" onclick="showPage('telephony')">Cloud PBX</a>
+                        <a href="#dialer" onclick="showPage('dialer')">Call Center Dialer</a>
+                        <a href="#ivr" onclick="showPage('ivr')">IVR Solutions</a>
+                        <a href="#meta-ads" onclick="showPage('meta-ads')">Meta Ads</a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 20px; color: var(--white);">Contact Info</h3>
+                    <div class="footer-links">
+                        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 10px;">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i>
+                            123 Business Avenue
+                        </p>
+                        <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 10px;">
+                            <i class="fas fa-phone" style="margin-right: 10px;"></i>
+                            +1 (555) 123-4567
+                        </p>
+                        <p style="color: rgba(255, 255, 255, 0.7);">
+                            <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+                            contact@nexusconsult.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 NexusConsult. All rights reserved. | <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== PAGE NAVIGATION SYSTEM =====
+        let currentPage = 'home';
+
+        // Initialize page system
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check URL hash on load
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash + '-page')) {
+                showPage(hash);
+            } else {
+                showPage('home');
+            }
+
+            // Initialize mobile menu
+            initMobileMenu();
+
+            // Initialize form submission
+            initForm();
+        });
+
+        // Show specific page
+        function showPage(pageId) {
+            // Hide current page
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Remove active class from all nav links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Show selected page
+            const targetPage = document.getElementById(pageId + '-page');
+            if (targetPage) {
+                targetPage.classList.add('active');
+                currentPage = pageId;
+
+                // Update active nav link
+                const activeLink = document.querySelector(`.nav-links a[href="#${pageId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+
+                // Update URL hash
+                window.location.hash = pageId;
+
+                // Scroll to top
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // ===== MOBILE MENU =====
+        function initMobileMenu() {
+            const mobileBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            mobileBtn.addEventListener('click', function() {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.position = 'absolute';
+                    navLinks.style.top = '100%';
+                    navLinks.style.left = '0';
+                    navLinks.style.width = '100%';
+                    navLinks.style.background = 'white';
+                    navLinks.style.flexDirection = 'column';
+                    navLinks.style.padding = '20px';
+                    navLinks.style.boxShadow = 'var(--shadow-large)';
+                    navLinks.style.gap = '20px';
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('nav') && window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        }
+
+        // Mobile menu toggle (for onclick)
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.background = 'white';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.padding = '20px';
+                navLinks.style.boxShadow = 'var(--shadow-large)';
+                navLinks.style.gap = '20px';
+            }
+        }
+
+        // ===== FORM VALIDATION & SUBMISSION =====
+        function initForm() {
+            const form = document.getElementById('contactForm');
+            if (!form) return;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const service = document.getElementById('service').value;
+                
+                // Simple validation
+                if (!name || !email || !phone || !service) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Email validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Phone validation (basic)
+                const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                if (!phoneRegex.test(phone)) {
+                    alert('Please enter a valid phone number.');
+                    return;
+                }
+                
+                // Success message
+                alert('Thank you for your inquiry! We will contact you within 24 hours.');
+                
+                // Reset form
+                form.reset();
+            });
+        }
+
+        // ===== ANIMATIONS =====
+        // Add scroll animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements
+            document.querySelectorAll('.service-card, .benefit-item, .process-step').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        }
+
+        // Initialize animations on page load
+        setTimeout(initScrollAnimations, 100);
+
+        // ===== HEADER SCROLL EFFECT =====
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = 'var(--shadow-medium)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = 'var(--shadow-subtle)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // ===== DROPDOWN MENU =====
+        document.querySelectorAll('.dropdown').forEach(dropdown => {
+            dropdown.addEventListener('mouseenter', function() {
+                this.querySelector('.dropdown-content').style.opacity = '1';
+                this.querySelector('.dropdown-content').style.visibility = 'visible';
+                this.querySelector('.dropdown-content').style.transform = 'translateY(0)';
+            });
+
+            dropdown.addEventListener('mouseleave', function() {
+                this.querySelector('.dropdown-content').style.opacity = '0';
+                this.querySelector('.dropdown-content').style.visibility = 'hidden';
+                this.querySelector('.dropdown-content').style.transform = 'translateY(10px)';
+            });
+        });
+
+        // Make functions globally available
+        window.showPage = showPage;
+        window.toggleMenu = toggleMenu;
+    </script>
+</body>
+</html>
